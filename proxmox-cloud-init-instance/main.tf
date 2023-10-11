@@ -12,6 +12,7 @@ data "template_file" "user_data" {
     pubkey   = file("~/.ssh/id_rsa.pub")
     hostname = "${var.hostname}"
     fqdn     = "${var.hostname}.${var.domain_name}"
+    gh_ssh_import_user = "${var.gh_ssh_import_user}"
   }
 }
 resource "local_file" "cloud_init_user_data_file" {
